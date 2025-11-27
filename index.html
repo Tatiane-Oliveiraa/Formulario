@@ -7,9 +7,9 @@
     <title>Formulário de Cadastro</title>
 </head>
 <body>
-    <h2>Formulário de Cadastro</h2>
 
     <form method="post" action="processamento.php">
+        <h2>Formulário de Cadastro</h2>
 
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" required>
@@ -32,17 +32,13 @@
         <label for="cidade">Cidade:</label>
         <input type="text" name="cidade" id="cidade" readonly>
 
-        <label for="estado">Estado:</label>
-        <input type="text" name="estado" id="estado" readonly>
-
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="senha" required>
 
         <button type="submit">Cadastrar</button>
         <button type="reset">Limpar</button>
-
     </form>
-    
+
     <script>
         document.getElementById("cep").addEventListener("blur", function() {
             const cep = this.value.replace(/\D/g, '');
@@ -55,15 +51,14 @@
                             document.getElementById("endereco").value = data.logradouro;
                             document.getElementById("bairro").value = data.bairro;
                             document.getElementById("cidade").value = data.localidade;
-                            document.getElementById("estado").value = data.uf;
                         } else {
                             alert("CEP não encontrado.");
                         }
                     })
                     .catch(() => alert("Erro ao buscar o CEP."));
             }
-        });          
+        });
     </script>
-    
+
 </body>
 </html>
